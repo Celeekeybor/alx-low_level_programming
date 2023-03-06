@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _memset - prints buffer 
+ * _memset - prints buffer
  * @s: the address of memory to print
  * @n: size of the memory to print
  * @b: data type to be printed
