@@ -1,53 +1,34 @@
-/**
- * _strpbrk - a function that searches a
- * @s: pointer to input string
- * @accept: pointer to string we
- * Return: pointer to the bytes in @s
-*/
-
-char *_strpbrk(char *s, char *accept)
-{
-	int i, j;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		j = 0;
-		while (accept[j] != '\0')
-		{
-			if (s[i] == accept[j])
-				return (s + i);
-			j++;
-		}
-		i++;
-	}
-	return ('\0');
-}
-Tobias Baraka2:12 AM
+#include "main.h"
 /**
  * _strstr - a function that locates a substring
- * @haystack: input string to search for matching
- *            substrings
- * @needle: subtring to search for
- * Return: a pointer to the beginning
-*/
-
+ * @haystack: locate a substring
+ * @needle: substring to locate
+ *
+ * Return: pointer to the beginning of the located substring,
+ * or NULL, if substring is not found
+ */
 char *_strstr(char *haystack, char *needle)
 {
-	char *h, *n;
+	char *h = haystack;
+	char *n = needle;
 
-	while (*haystack != '\0')
+	while (*h)
 	{
-		h = haystack;
 		n = needle;
-		while (*n != '\0' && *haystack == *n)
+		h = haystack;
+		while (*n)
 		{
-			haystack++;
-			n++;
+			if (*h == *n)
+			{
+				n++;
+				h++;
+			}
+			else
+				break;
 		}
-		if (!*n)
-			return (h);
+		if (*n == '\0')
+			return (haystack);
 		haystack++;
 	}
-	return ('\0');
+	return (0);
 }
