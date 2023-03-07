@@ -1,28 +1,39 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * *_strchr - locates a character in a string
- * @s: string to search
- * @c: char to find
+ * _strspn - Gets the length of a prefix substring.
+ * @s: The string to be searched.
+ * @accept: The prefix to be measured.
  *
- * Return: a pointer to the first occurrence of the character
- * c in the string s, or NULL if the character is not found
+ * Return: The number of bytes in s which
+ *         consist only of bytes from accept.
+ *
+ * PSEUDOCODE
+ * Loop through s and compare s[i] to values in accept
+ *	increase bytes counter when values in accept can be found
+ *	*in s
+ * end loop and return bytes when accept is exhaused
  */
-char *_strchr(char *s, char c)
+unsigned int _strspn(char *s, char *accept)
 {
-		int a;
+	unsigned int bytes = 0;
+	int index;
 
-		while (1)
+	while (*s)
+	{
+		for (index = 0; accept[index]; index++)
 		{
-			a = *s++;
-			if (a == c)
+			if (*s == accept[index])
 			{
-				return (s - 1);
+				bytes++;
+				break;
 			}
-			if (a == 0)
-			{
-				return (NULL);
-			}
+
+			else if (accept[index + 1] == '\0')
+				return (bytes);
 		}
+
+		s++;
+	}
+
+	return (bytes);
 }
