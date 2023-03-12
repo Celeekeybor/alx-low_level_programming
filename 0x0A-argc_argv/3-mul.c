@@ -18,6 +18,6 @@ printf("Error\n");
 return (1);
 }
 
-printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+printf("%d\n", atoi(argv) * atoi(argv));
 return (0);
 }
