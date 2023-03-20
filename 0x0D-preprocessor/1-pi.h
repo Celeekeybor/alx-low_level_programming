@@ -1,7 +1,5 @@
-#include<stdio.h>
-
-#ifndef _PI.H
-#define _PI.H
+#ifndef PI
+#define PI 
 
 #define PI 3.14159265359
 
