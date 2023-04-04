@@ -4,18 +4,18 @@
  * pop_listint - delete the head node of a linked list
  * @head: pointer to a pointer of a linked list
  *
- * Return: integer, n data of the deleted node
+ * Return: integer, n data value of deleted node
  */
 int pop_listint(listint_t **head)
 {
-	int k = 0;
+	int n = 0;
 	listint_t *h = *head;
 
 	if (h != NULL)
 	{
-		k  = h->k;
+		n = h->n;
 		*head = h->next;
 		free(h);
 	}
-	return (k);
+	return (n);
 }
