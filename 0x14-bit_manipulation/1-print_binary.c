@@ -1,22 +1,30 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * print_binary : print binary representation of number
- * @n : unsigned long int
- * Return : Number in binary
- */
+* print_binary - prints the binary representation of a number
+* @n: unsigned long int
+* Return: binary number
+*/
 
-void print_binary(unsigned long int n) {
-if (n > 1) {
-print_binary(n >> 1);
+void print_binary(unsigned long int n)
+{
+unsigned long int cele = 1UL << (sizeof(unsigned long int) * 8 - 1);
+int leading_zero = 1;
+while (cele > 0)
+{
+if ((n & cele) == cele)
+{
+putchar('1');
+leading_zero = 0;
 }
-putchar((n & 1) ? '1' : '0');
+else if (!leading_zero)
+{
+putchar('0');
 }
-int main() {
-unsigned long int num = 42;
-printf("%lu in binary is: ", num);
-print_binary(num);
-putchar('\n');
-return 0;
+cele >>= 1;
 }
-
+if (leading_zero)
+{
+putchar('0');
+}
+}
