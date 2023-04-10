@@ -9,11 +9,11 @@
 unsigned int bit_count(unsigned long int n, unsigned long int m)
 {
 unsigned long int diff = n ^ m;
-unsigned int bit_count = 0;
-while (diff != 0)
+unsigned int count = 0;
+if (diff != 0)
 {
-bit_count += diff & 1;
+count += diff & 1;
 diff >>= 1;
 }
-return (bit_count);
+return (count);
 }
