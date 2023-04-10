@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * flipped_count - Returns the number of bits  needed to be flipped
+ * flip_count - Returns the number of bits  needed to be flipped
  * @n: type unsigned long int input pointer
  * @m: type unsigned long int position of unit
- * Return: flipped_count
+ * Return: flipped
  */
 
-unsigned int flipped_count(unsigned long int n, unsigned long int m)
+unsigned int flip_count(unsigned long int n, unsigned long int m)
 {
 unsigned long int diff = n ^ m;
 unsigned int flipped_count = 0;
