@@ -8,7 +8,7 @@
  */
 int clear_bit(unsigned long int *n, unsigned int position)
 {
-if (position>= sizeof(unsigned long int) * 8)
+if (position >= sizeof(unsigned long int) * 8)
 return (-1);
 *n &= ~(1UL << position);
 return (1);
