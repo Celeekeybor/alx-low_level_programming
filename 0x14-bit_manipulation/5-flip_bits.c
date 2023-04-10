@@ -1,18 +1,22 @@
 #include "main.h"
+
 /**
- * bit_count - Returns the number of bits  needed to be flipped
- * @n: input unsigned long int pointer
- * @m: unsigned long int position of unit
- * Return: flipped_count
+ * flip_bits-  function that returns the number of bits you
+ * would need to flip to get from one number to another
+ *
+ * @n: first number
+ * @m: second number
+ *
+ * Return: flipped_bits
  */
-unsigned int bit_count(unsigned long int n, unsigned long int m)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-unsigned long int diff = n ^ m;
-unsigned int count = 0;
-if (diff != 0)
+unsigned long int power = n ^ m;
+unsigned long int bit = 0;
+while (cel != 0)
 {
-count += diff & 1;
-diff >>= 1;
+bit += (cel & 1);
+cel = cel >> 1;
 }
-return (count);
+return (bit);
 }
