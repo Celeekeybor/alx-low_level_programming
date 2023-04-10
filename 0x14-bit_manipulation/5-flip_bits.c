@@ -11,7 +11,7 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-unsigned long int power = n ^ m;
+unsigned long int cel = n ^ m;
 unsigned long int bit = 0;
 while (cel != 0)
 {
