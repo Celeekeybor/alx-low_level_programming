@@ -11,7 +11,7 @@ unsigned int flipped_count(unsigned long int n, unsigned long int m)
 {
 unsigned long int diff = n ^ m;
 unsigned int flipped_count = 0;
-if (diff != 0)
+while (diff != 0)
 {
 flipped_count += diff & 1;
 diff >>= 1;
