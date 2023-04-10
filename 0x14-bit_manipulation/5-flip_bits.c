@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * bit_count - Returns the number of bits  needed to be flipped
  * @n: input unsigned long int pointer
