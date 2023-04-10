@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * set_bit: set bit value to 1 at a given index
  * @n: unsigned long int input pointer
