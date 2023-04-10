@@ -4,7 +4,6 @@
 #include <stdio.h>
 
 #define BUFFER_SIZE 1024
-
 /**
 * main - Copy file content to another file 
 *
@@ -35,7 +34,7 @@ ty = read(bor_from, buffer, BUFFER_SIZE);
 if (ty == -1)
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
 wr = write(bor_to, buffer, ty);
-if (wr == -1)
+while (wr == -1)
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 } while (ty == BUFFER_SIZE);
 /* Close the file descriptors */
