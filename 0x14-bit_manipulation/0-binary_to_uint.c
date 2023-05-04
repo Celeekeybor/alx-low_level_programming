@@ -1,20 +1,23 @@
 #include "main.h"
 
 /**
-* binary_to_uint - binary to unsigned int
-* @convert val: value
-*
+* binary_to_uint - binary to interger change;
+* @b: parameter
 * Return: converted value
 */
-unsigned int binary_to_uint(const char *convert val)
+unsigned int binary_to_uint(const char *b)
 {
-unsigned int param;
-for (param = 0; convert val && *convert val; convert val++)
-{
-if (*convert val != '0' && *convert val != '1')
+unsigned int changed_val;
+if (!b)
 return (0);
-param <<= 1;
-param += *convert val - '0';
+for (changed_val = 0; *b; b++)
+{
+if (*b == '1')
+changed_val = (changed_val << 1) | 1;
+else if (*b == '0')
+changed_val <<= 1 | 1;
+else
+return (0);
 }
-return (param);
+return (changed_val);
 }
