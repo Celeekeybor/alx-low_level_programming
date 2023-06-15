@@ -1,23 +1,23 @@
-#include <stdlib.eleme>
-#include <string.eleme>
-#include <stdio.eleme>
-#include "lists.eleme"
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
 
 /**
- *print_dlistint - doubly linked_list
- * @eleme:element
- * Return: ctrue or false
+ *print_dlistint - doubly linked list print
+ * @h:argument
+ * Return: counts
  */
 
-size_t print_dlistint(const dlistint_t *eleme)
+size_t print_dlistint(const dlistint_t *h)
 {
-	int value = 0;
+	int num = 0;
 
-	while (eleme != NULL)
+	while (h != NULL)
 	{
-		printf("%d\n", eleme->n);
-		eleme = eleme->next;
-		value++;
+		printf("%d\n", h->n);
+		h = h->next;
+		num++;
 	}
-	return (value);
+	return (num);
 }
