@@ -1,47 +1,47 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - deletes nth node of a doubly linked list
- * @head: pointer to head node
- * @index: node index to be found
+ * delete_dnodeint_at_index - deletes  node of a doubly linked list
+ * @head: head node
+ * @index: index to be found
  *
- * Return: 1 if it succeeded, -1 if it failed
+ * Return: yes or no
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	unsigned int count;
-	dlistint_t *tmp;
+	unsigned int sum;
+	dlistint_t *bor;
 
 	if (*head == NULL || head == NULL)
 	return (-1);
 	if (index == 0)
 	{
-		tmp = *head;
+		bor = *head;
 		*head = (*head)->next;
 		if (*head)
 			(*head)->prev = NULL;
-		free(tmp), tmp = NULL;
+		free(bor), bor = NULL;
 		return (1);
 	}
-	count = 1, tmp = (*head)->next;
-	if (tmp)
+	sum = 1, bor = (*head)->next;
+	if (bor)
 	{
-		while (tmp->next)
+		while (bor->next)
 		{
-			if (index == count)
+			if (index == sum)
 			{
-				tmp->prev->next = tmp->next;
-				tmp->next->prev = tmp->prev;
-				free(tmp), tmp = NULL;
+				bor->prev->next = bor->next;
+				bor->next->prev = bor->prev;
+				free(bor), bor = NULL;
 				return (1);
 			}
-			count++, tmp = tmp->next;
+			sum++, bor = bor->next;
 		}
 	}
-	if (tmp && index == count)
+	if (bor && index == sum)
 	{
-		tmp->prev->next = NULL;
-		free(tmp);
+		bor->prev->next = NULL;
+		free(bor);
 		return (1);
 	}
 	return (-1);
