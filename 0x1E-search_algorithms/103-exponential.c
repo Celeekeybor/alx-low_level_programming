@@ -45,7 +45,7 @@ int binary_search(int *array, size_t start, size_t end, int value)
  * @size: Number of elements in the array.
  * @value: Value to search for.
  *
- * Return: Index of the first occurrence of value, or -1 if not found.
+ * Return: Index of the first occurred value
  */
 int exponential_search(int *array, size_t size, int value)
 {
